@@ -1,0 +1,18 @@
+h2. Requirements
+
+You need a "MongoHQ":http://mongohq.com account or a local "MongoDB": installation and "RVM":.
+
+h2. Gems
+
+gem install mongoid --pre
+gem install bson_ext
+
+
+h2. Execution
+
+<pre>
+export MONGOHQ_URL='mongodb://USER:PASS@flame.mongohq.com:27063/DATABASE'
+ruby example.rb 
+</pre>
+
+h2. Installing MongoDB on OS X
