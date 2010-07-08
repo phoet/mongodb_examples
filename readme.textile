@@ -1,18 +1,29 @@
 h2. Requirements
 
-You need a "MongoHQ":http://mongohq.com account or a local "MongoDB": installation and "RVM":.
+You need a "MongoHQ":http://mongohq.com account and should create a "Gemset with RVM":http://rvm.beginrescueend.com/gemsets/creating/.
 
-h2. Gems
+h2. Gems via RVM
 
-gem install mongoid --pre
-gem install bson_ext
-
+<pre>
+# use Ruby 1.9 with a gemset
+rvm use 1.9.1@mongodb
+# import the gems from provided .gems file
+rvm gemset import
+</pre>
 
 h2. Execution
 
 <pre>
-export MONGOHQ_URL='mongodb://USER:PASS@flame.mongohq.com:27063/DATABASE'
-ruby example.rb 
+export MONGOHQ_USER="username"
+export MONGOHQ_PASS="password"
+export MONGOHQ_PORT="port"
+export MONGOHQ_DB="database"
+
+rake
 </pre>
 
-h2. Installing MongoDB on OS X
+h2. TODO 
+
+* Installing MongoDB on OS X
+* Example for local usage
+* Example for MongoMapper

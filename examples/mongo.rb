@@ -2,8 +2,12 @@ require 'uri'
 require 'mongo'
 require 'pp'
 
-# mongodb://USER:PASSWORD@flame.mongohq.com:PORT/DATABASE
-mongo_url = ENV['MONGOHQ_URL']
+# some advise for connection
+# http://docs.heroku.com/mongohq#using-mongo-ruby-driver
+# driver documentation
+# http://github.com/mongodb/mongo-ruby-driver
+
+mongo_url = "mongodb://#{ENV['MONGOHQ_USER']}:#{ENV['MONGOHQ_PASS']}@flame.mongohq.com:#{ENV['MONGOHQ_PORT']}/#{ENV['MONGOHQ_DB']}"
 
 puts "Opening connection to #{mongo_url}"
 uri = URI.parse(mongo_url)
