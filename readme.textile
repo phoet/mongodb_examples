@@ -1,3 +1,7 @@
+h1. About
+
+Examples of "Mongo Ruby Driver":http://api.mongodb.org, "Mongoid":http://mongoid.org/ and "MongoMapper":http://mongomapper.com/ running on "MongoHQ":http://mongohq.com.
+
 h2. Requirements
 
 You need a "MongoHQ":http://mongohq.com account and should create a "Gemset with RVM":http://rvm.beginrescueend.com/gemsets/creating/.
@@ -26,4 +30,3 @@ h2. TODO
 
 * Installing MongoDB on OS X
 * Example for local usage
-* Example for MongoMapper
