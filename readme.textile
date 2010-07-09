@@ -17,16 +17,46 @@ rvm gemset import
 
 h2. Execution
 
+You can configure the server configuration via your environment. If you want to connect to your MongoHQ account have a look at "your credentials and connection string":https://mongohq.com/databases/.
+
 <pre>
-export MONGOHQ_USER="username"
-export MONGOHQ_PASS="password"
-export MONGOHQ_PORT="port"
-export MONGOHQ_DB="database"
+echo "exporting local mongo-parameters"
+export MONGO_HOST="localhost"
+export MONGO_USER="test"
+export MONGO_PASS="test"
+export MONGO_PORT="27017"
+export MONGO_DB="test"
 
 rake
 </pre>
 
-h2. TODO 
+h2. MongoDB on OS X
 
-* Installing MongoDB on OS X
-* Example for local usage
+There is a nice "Quickstart":http://www.mongodb.org/display/DOCS/Quickstart+OS+X available in the documentation, which comes down to:
+
+<pre>
+brew install mongodb
+mkdir -p /data/db
+mongod run --config /usr/local/Cellar/mongodb/1.4.4-x86_64/mongod.conf
+</pre>
+
+"Creating a DB-User":http://www.mongodb.org/display/DOCS/Security+and+Authentication is easy as this:
+
+<pre>
+mongo
+> use test
+> db.addUser("test", "test")
+</pre>
+
+h2. Resources
+
+* Mongo Ruby Driver
+** "driver documentation":http://github.com/mongodb/mongo-ruby-driver
+** "connection help":http://docs.heroku.com/mongohq#using-mongo-ruby-driver
+* Mongoid
+** "project site":http://github.com/durran/mongoid
+** "great documentation":http://mongoid.org/docs/documents/
+** "simple tutorial":http://rujmah.posterous.com/using-mongoid-without-rails
+* MongoMapper
+** "project page":http://github.com/jnunemaker/mongomapper
+** "nice tutorial":http://railstips.org/blog/archives/2009/06/27/mongomapper-the-rad-mongo-wrapper/

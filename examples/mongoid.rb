@@ -1,15 +1,8 @@
 require 'mongoid' 
 require 'pp'
 
-# simple tutorial 
-# http://rujmah.posterous.com/using-mongoid-without-rails
-# great documentation
-# http://mongoid.org/docs/documents/
-# project site
-# http://github.com/durran/mongoid
-
-p Mongoid.database = Mongo::Connection.new('flame.mongohq.com',ENV['MONGOHQ_PORT']).db(ENV['MONGOHQ_DB'])
-Mongoid.database.authenticate(ENV['MONGOHQ_USER'],ENV['MONGOHQ_PASS'])
+p Mongoid.database = Mongo::Connection.new(ENV['MONGO_HOST'], ENV['MONGO_PORT']).db(ENV['MONGO_DB'])
+Mongoid.database.authenticate(ENV['MONGO_USER'], ENV['MONGO_PASS'])
 
 class Tweeter 
   include Mongoid::Document 

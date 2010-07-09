@@ -1,12 +1,7 @@
 require 'mongo_mapper' 
 require 'pp'
 
-# source
-# http://github.com/jnunemaker/mongomapper
-# tutorial
-# http://railstips.org/blog/archives/2009/06/27/mongomapper-the-rad-mongo-wrapper/
-
-MONGO_URL = "mongodb://#{ENV['MONGOHQ_USER']}:#{ENV['MONGOHQ_PASS']}@flame.mongohq.com:#{ENV['MONGOHQ_PORT']}/#{ENV['MONGOHQ_DB']}"
+MONGO_URL = "mongodb://#{ENV['MONGO_USER']}:#{ENV['MONGO_PASS']}@#{ENV['MONGO_HOST']}:#{ENV['MONGO_PORT']}/#{ENV['MONGO_DB']}"
 puts "Opening connection to #{MONGO_URL}"
 
 class Person

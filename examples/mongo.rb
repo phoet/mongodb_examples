@@ -2,12 +2,7 @@ require 'uri'
 require 'mongo'
 require 'pp'
 
-# some advise for connection
-# http://docs.heroku.com/mongohq#using-mongo-ruby-driver
-# driver documentation
-# http://github.com/mongodb/mongo-ruby-driver
-
-mongo_url = "mongodb://#{ENV['MONGOHQ_USER']}:#{ENV['MONGOHQ_PASS']}@flame.mongohq.com:#{ENV['MONGOHQ_PORT']}/#{ENV['MONGOHQ_DB']}"
+mongo_url = "mongodb://#{ENV['MONGO_USER']}:#{ENV['MONGO_PASS']}@#{ENV['MONGO_HOST']}:#{ENV['MONGO_PORT']}/#{ENV['MONGO_DB']}"
 
 puts "Opening connection to #{mongo_url}"
 uri = URI.parse(mongo_url)
