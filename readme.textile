@@ -1,10 +1,10 @@
 h1. About
 
-Examples of "Mongo Ruby Driver":http://api.mongodb.org, "Mongoid":http://mongoid.org/ and "MongoMapper":http://mongomapper.com/ running on "MongoHQ":http://mongohq.com.
+Examples of "Mongo Ruby Driver":http://api.mongodb.org, "Mongoid":http://mongoid.org/ and "MongoMapper":http://mongomapper.com/ running on a local MongoDB or "MongoHQ":http://mongohq.com.
 
 h2. Requirements
 
-You need a "MongoHQ":http://mongohq.com account and should create a "Gemset with RVM":http://rvm.beginrescueend.com/gemsets/creating/.
+You need a local MongoDB installation or a "MongoHQ":http://mongohq.com account and should create a "Gemset with RVM":http://rvm.beginrescueend.com/gemsets/creating/.
 
 h2. Gems via RVM
 
