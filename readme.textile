@@ -2,11 +2,9 @@ h1. About
 
 Examples of "Mongo Ruby Driver":http://api.mongodb.org, "Mongoid":http://mongoid.org/ and "MongoMapper":http://mongomapper.com/ running on a local MongoDB or "MongoHQ":http://mongohq.com.
 
-h2. Requirements
+"See it running":http://mongodb-examples.heroku.com/ on "Heroku":http://heroku.com/.
 
-You need a local MongoDB installation or a "MongoHQ":http://mongohq.com account and should create a "Gemset with RVM":http://rvm.beginrescueend.com/gemsets/creating/.
-
-h2. Gems via Bundler
+h2. Installation
 
 <pre>
 # use Ruby 1.9 with a gemset
@@ -16,40 +14,7 @@ gem install bundler --pre
 bundle install
 </pre>
 
-h2. Execution
-
-"See it running":http://mongodb-examples.heroku.com/ on "Heroku":http://heroku.com/.
-
-You can configure the server configuration via your environment. If you want to connect to your MongoHQ account have a look at "your credentials and connection string":https://mongohq.com/databases/.
-
-<pre>
-echo "exporting local mongo-parameters"
-export MONGO_HOST="localhost"
-export MONGO_USER="test"
-export MONGO_PASS="test"
-export MONGO_PORT="27017"
-export MONGO_DB="test"
-
-rake
-</pre>
-
-h2. MongoDB on OS X
-
-There is a nice "Quickstart":http://www.mongodb.org/display/DOCS/Quickstart+OS+X available in the documentation, which comes down to:
-
-<pre>
-brew install mongodb
-mkdir -p /data/db
-mongod run --config /usr/local/Cellar/mongodb/1.4.4-x86_64/mongod.conf
-</pre>
-
-"Creating a DB-User":http://www.mongodb.org/display/DOCS/Security+and+Authentication is easy as this:
-
-<pre>
-mongo
-> use test
-> db.addUser("test", "test")
-</pre>
+"Some more information on installing MongoDB and using the different MongoDB Drivers":http://blog.nofail.de/2010/07/mongo-ruby-driver-mongoid-and-mongomapper/.
 
 h2. Resources
 
