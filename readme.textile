@@ -18,6 +18,8 @@ bundle install
 
 h2. Execution
 
+"See it running":http://mongodb-examples.heroku.com/ on "Heroku":http://heroku.com/.
+
 You can configure the server configuration via your environment. If you want to connect to your MongoHQ account have a look at "your credentials and connection string":https://mongohq.com/databases/.
 
 <pre>
