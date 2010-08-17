@@ -1,1 +1,18 @@
-moin moin
+%h1 Mongo Ruby Driver, Mongoid, MongoMapper
+
+%p Add a Twitter post to MongoDB using different MongoDB-Drivers.
+
+-if @post_id && @driver
+  %p="You posted #{@post_id} and #{@driver}"
+
+%form{:method=>"post", :action=>"/add"}
+  %p
+    %label{:for=>"driver"} MongoDB-Driver:
+    -MONGODB_DRIVERS.each do |driver|
+      %input{:name=>"driver", :type=>"radio", :value=>"#{driver}"}= driver
+  %p
+    %label{:for=>"post_id"} Twitter Post ID:
+    %input{:name=>"post_id"}
+  
+  %p
+    %input{:name=>"submit", :type=>"submit", :value=>"Add to MongoDB"}

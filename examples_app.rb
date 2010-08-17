@@ -1,13 +1,15 @@
 require 'sinatra'
 require "sinatra/reloader" if development?
 
+MONGODB_DRIVERS = [:mongo_ruby_driver, :mongoid, :mongo_mapper]
+
 get /.*/ do
   haml :index
 end
 
 post "/add" do
   puts params
-  @name = params[:name]
-  @text = params[:text]
+  @driver = params[:driver]
+  @post_id = params[:post_id]
   haml :index
 end
