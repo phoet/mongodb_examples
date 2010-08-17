@@ -6,13 +6,14 @@ h2. Requirements
 
 You need a local MongoDB installation or a "MongoHQ":http://mongohq.com account and should create a "Gemset with RVM":http://rvm.beginrescueend.com/gemsets/creating/.
 
-h2. Gems via RVM
+h2. Gems via Bundler
 
 <pre>
 # use Ruby 1.9 with a gemset
 rvm use 1.9.1@mongodb
-# import the gems from provided .gems file
-rvm gemset import
+# use bundler-1.0.0.rc.5 or higher
+gem install bundler --pre
+bundle install
 </pre>
 
 h2. Execution
