@@ -17,6 +17,8 @@ h3.mongodb { background: #ffc url(/images/logo-mongodb.png) 16px 0px no-repeat; 
 p { font-size: 12pt; line-height: 1.5em; padding-bottom: 16pt; }
 p.action, .CodeRay { color: #444; font-size: 12px; font-weight: normal; padding: 16pt; background: #ffc; margin-bottom: 16pt; }
 
+pre.action { color: #444; font-size: 10px; font-weight: normal; padding: 16pt; background: #ffc; margin-bottom: 16pt; }
+
 section#all { width: 960px; margin: 0 auto; }
 
 article { background: url(/images/fox.png) bottom right no-repeat; }

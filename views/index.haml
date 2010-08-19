@@ -15,19 +15,22 @@
     %strong Chunky Bacon!
     
 %p
-  This will add the selected Twitter post to the MongoDB (hosted on MongoHQ), show you the executed Ruby source code and the bson representation of your data.
+  This will load the Twitter post, show you the executed Ruby source code, add the post to the MongoDB (hosted on <a href="http://mongohq.com">MongoHQ</a>), and outpu the bson datarepresentation.
 
 -if @error
   %p.error=@error
 
 -if @post_id && @driver
-  %p.notice="You posted #{@post_id} and #{@driver}"
+  %p.notice="You posted #{@post_id} with #{@driver} and created #{@mongo_id}"
 
   %h3 Twitter Response
-  %p.action=@twitter_post
+  %pre.action=@twitter_post.ai(:plain => :true)
     
   %h3="Ruby Source for #{@driver}"
   =CodeRay.scan(@ruby_source, "ruby").div
+  
+  %h3="MongoDB data for #{@mongo_id}"
+  %pre.action=@mongo_data.ai(:plain => :true).gsub(', "', ', <br>"')
   
   %h3 Another Chunky Bakon?
 

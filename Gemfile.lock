@@ -1,13 +1,33 @@
 GEM
   remote: http://gemcutter.org/
   specs:
+    activesupport (2.3.8)
+    awesome_print (0.2.1)
     backports (1.18.1)
+    bson (1.0.4)
     coderay (0.9.3)
     crack (0.1.8)
+    durran-validatable (2.0.1)
     haml (3.0.17)
     httpclient (2.1.5.2)
+    jnunemaker-validatable (1.8.4)
+      activesupport (>= 2.3.4)
+    mongo (1.0.7)
+      bson (>= 1.0.4)
+    mongo_mapper (0.8.3)
+      activesupport (>= 2.3.4)
+      jnunemaker-validatable (~> 1.8.4)
+      plucky (~> 0.3.3)
+    mongoid (1.9.1)
+      activesupport (<= 3.0.0)
+      bson (~> 1.0.1)
+      durran-validatable (>= 2.0.1)
+      mongo (~> 1.0.1)
+      will_paginate (< 2.9)
     monkey-lib (0.5.2)
       backports
+    plucky (0.3.4)
+      mongo (~> 1.0.7)
     rack (1.2.1)
     sinatra (1.0)
       rack (>= 1.0)
@@ -21,14 +41,19 @@ GEM
     sinatra-sugar (0.5.0)
       monkey-lib (~> 0.5.0)
       sinatra (~> 1.0)
+    will_paginate (2.3.14)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print (= 0.2.1)
   coderay (= 0.9.3)
   crack (= 0.1.8)
   haml (= 3.0.17)
   httpclient (= 2.1.5.2)
+  mongo (= 1.0.7)
+  mongo_mapper (= 0.8.3)
+  mongoid (= 1.9.1)
   sinatra (= 1.0)
   sinatra-reloader (= 0.5.0)
