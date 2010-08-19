@@ -19,11 +19,10 @@ end
 
 post "/add" do
   puts params.inspect
-  @driver = params[:driver]
+  @driver = params[:driver].to_sym
   @post_id = params[:post_id]
   
   unless @post_id.empty?
-    @driver = @driver.to_sym
     @twitter_post = load_post_from_twitter(@post_id)
     @ruby_source = File.read("examples/#{@driver}.rb")
     if(@driver == :mongo_ruby_driver)
