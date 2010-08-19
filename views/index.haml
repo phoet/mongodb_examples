@@ -1,5 +1,4 @@
-%p
-  The usage of the interface is quite simple:
+%h3 The usage of the interface is quite simple:
 
 %ul
   %li 
@@ -7,12 +6,13 @@
     %a{:href=>"http://twitter.com"} twitter.com
   %li 
     pic a 
-    %a{:href=>"http://twitter.com/phoet/status/21556716076"} random post
+    %a{:href=>"http://twitter.com/phoet/status/21556716076"} public post
   %li copy the post-id from the url (<a href="http://twitter.com/phoet/status/21556716076">http://twitter.com/phoet/status/<strong>21556716076</strong></a>)
   %li paste it into the form
   %li select the MongoDB driver of choice
   %li
-    %strong Chunky Bacon!
+    %strong
+      %em Chunky Bacon!
     
 %p
   This will load the Twitter post, show you the executed Ruby source code, add the post to the MongoDB (hosted on <a href="http://mongohq.com">MongoHQ</a>), and outpu the bson datarepresentation.
