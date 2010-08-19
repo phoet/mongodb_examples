@@ -7,9 +7,10 @@ require 'ap/mixin/action_view.rb'
 
 include Helper
 
-MONGODB_DRIVERS = [:mongo_ruby_driver, :mongoid, :mongo_mapper]
+#MONGODB_DRIVERS = [:mongo_ruby_driver, :mongoid, :mongo_mapper]
+MONGODB_DRIVERS = [:mongo_ruby_driver]
 
-#MONGODB_DRIVERS.each {|driver| require "examples/#{driver}.rb"}
+MONGODB_DRIVERS.each {|driver| require "examples/#{driver}.rb"}
 
 get /.*/ do
   @driver = :mongo_ruby_driver
