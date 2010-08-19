@@ -12,7 +12,7 @@ header#logo { background: url(/images/logo.png) top center no-repeat; height: 25
 
 h3 { font-size: 16pt; font-weight: bold; line-height: 1.5em; margin-bottom: 16pt; }
 h3.action { color: #444; font-size: 20px; font-weight: normal; padding: 16pt; background: #ffc; margin-bottom: 16pt; }
-h3.mongodb { background: #ffc url(/images/logo-mongodb.png) 16px 0px no-repeat; color: #444; font-size: 20px; font-weight: normal; padding: 16pt; padding-left: 250px; margin-bottom: 16pt; }
+h3.mongodb { background: #ffc url(/images/logo-mongodb.png) 16px no-repeat; color: #444; font-size: 20px; font-weight: normal; padding: 16pt; padding-left: 250px; margin-bottom: 16pt; }
 
 p { font-size: 12pt; line-height: 1.5em; padding-bottom: 16pt; }
 p.action, .CodeRay { color: #444; font-size: 12px; font-weight: normal; padding: 16pt; background: #ffc; margin-bottom: 16pt; }

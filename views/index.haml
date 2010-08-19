@@ -15,13 +15,13 @@
       %em Chunky Bacon!
     
 %p
-  This will load the Twitter post, show you the executed Ruby source code, add the post to the MongoDB (hosted on <a href="http://mongohq.com">MongoHQ</a>), and outpu the bson datarepresentation.
+  This will load the Twitter post, show you the executed Ruby source code, add the post to the MongoDB (hosted on <a href="http://mongohq.com">MongoHQ</a>), and output the <a href="http://bsonspec.org/">bson</a> data representation.
 
 -if @error
   %p.error=@error
 
 -if @post_id && @driver && !@error
-  %p.notice="You posted #{@post_id} with #{@driver} and created #{@mongo_id}"
+  %p.notice="You posted '#{@post_id}' with '#{@driver}' and created document '#{@mongo_id}'"
 
   %h3 Twitter Response
   %pre.action=@twitter_post.ai(:plain => :true)
@@ -43,6 +43,8 @@
       %label{:for=>"driver"} MongoDB-Driver:
       -MONGODB_DRIVERS.each do |driver|
         %input{:name=>"driver", :type=>"radio", :value=>"#{driver}", "#{driver == @driver ? 'checked' : 'title'}"=>"checked"}= driver
+    %p
+      %em Mongoid and MongoMapper coming soon!
   
     %p
       %input{:name=>"submit", :type=>"submit", :value=>"Chunky Bacon!"}
