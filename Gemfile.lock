@@ -2,7 +2,10 @@ GEM
   remote: http://gemcutter.org/
   specs:
     backports (1.18.1)
+    coderay (0.9.3)
+    crack (0.1.8)
     haml (3.0.17)
+    httpclient (2.1.5.2)
     monkey-lib (0.5.2)
       backports
     rack (1.2.1)
@@ -23,6 +26,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coderay (= 0.9.3)
+  crack (= 0.1.8)
   haml (= 3.0.17)
+  httpclient (= 2.1.5.2)
   sinatra (= 1.0)
   sinatra-reloader (= 0.5.0)

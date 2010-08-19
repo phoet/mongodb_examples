@@ -1,0 +1,47 @@
+!!! XML
+!!!
+%html
+  %head
+    %meta{'http-equiv'=>"content-type", :content=>"text/html; charset=UTF-8"}
+    %meta{'http-equiv'=>"content-language", :content=>"us"}
+    %meta{'http-equiv'=>"language", :content=>"us"}
+    %meta{:name=>"language", :content=>"english, us"}
+    %meta{:name=>"robots", :content=>"index,follow"}
+    %link{:rel=>'stylesheet', :href=>'/css/application.css', :type=>'text/css'}
+    
+    %title Interactive MongoDB Examples for #WHYDAY
+
+  %body
+    %header#logo
+      %h1 Whyday
+      %h2 19 August 2010
+    
+    %section#all
+      %article#content
+        %aside#signup
+          %p
+            Check out the <a href="http://whyday.tumblr.com/">Whyday blog!</a>
+        
+        %h3
+          On August 19, 2009, <a href='http://en.wikipedia.org/wiki/Why_the_lucky_stiff'>Why the Lucky Stiff</a>
+          withdrew from the online community.
+          We in the Ruby community wish him well, but we really miss him.
+        
+        %h3.action
+          %a{:href=>"http://whyday.org/"}
+            This year, on August 19, celebrate Whyday.
+            Set aside that day to remember Why's contributions to our community and culture
+            by hacking just for the fun and joy of it.
+          
+        %h3
+          %a{:href=>"http://phoet.de"} My 
+          contribution, working at 
+          %a{:href=>"http://blaulabs.de"} blau Mobilfunk GmbH,
+          is a live demo of MongoDB using Mongo Ruby Driver, Mongoid and MongoMapper.
+          
+        = yield
+    
+    %footer
+      %p
+        For more information, contact <a href='mailto:whyday@vanderburg.org'>Glenn Vanderburg</a>
+        or follow <a href='http://twitter.com/celebratewhyday'>@celebratewhyday</a>.

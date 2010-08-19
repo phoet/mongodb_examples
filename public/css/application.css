@@ -1,0 +1,33 @@
+/* import stylesheets and hide from IE/Mac \*/
+@import url("/css/reset.css") screen; /* Reset browsers */
+
+aside { float: right; width: 300px; margin-left: 16px; background: #000; color: #fff; padding: 14px; }
+
+aside a { color: #fff;}
+
+body { background: #fff url(/images/body.png) top left repeat-x; font-family: "Helvetica Neue", "Helvetica", "Verdana", sans-serif; }
+
+header#logo * { text-indent: -9999px; }
+header#logo { background: url(/images/logo.png) top center no-repeat; height: 250px; }
+
+h3 { font-size: 16pt; font-weight: bold; line-height: 1.5em; margin-bottom: 16pt; }
+h3.action { color: #444; font-size: 20px; font-weight: normal; padding: 16pt; background: #ffc; margin-bottom: 16pt; }
+
+p { font-size: 12pt; line-height: 1.5em; padding-bottom: 16pt; }
+p.action, .CodeRay { color: #444; font-size: 12px; font-weight: normal; padding: 16pt; background: #ffc; margin-bottom: 16pt; }
+
+section#all { width: 960px; margin: 0 auto; }
+
+article { background: url(/images/fox.png) bottom right no-repeat; }
+article ul { background: url(/images/ruby.png) top left no-repeat; list-style: square; padding-left: 1em; margin-bottom: 16pt; font-size: 14pt; line-height: 1.5em; padding-left: 270px; }
+article li { margin-bottom: 8pt; }
+
+footer { border-top: 2px #000 dashed; margin-top: 0; padding: 16pt; }
+footer p { width: 960px; margin: 0 auto; }
+
+.quiet { font-size: 0.9em; color: #ddd; }
+
+article header { font-size: 18px; }
+
+.notice { color: #48B400; }
+.error { color: #f00; }

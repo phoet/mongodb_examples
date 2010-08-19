@@ -1,18 +1,40 @@
-%h1 Mongo Ruby Driver, Mongoid, MongoMapper
+%p
+  The usage of the interface is quite simple:
 
-%p Add a Twitter post to MongoDB using different MongoDB-Drivers.
+%ul
+  %li go to twitter.com
+  %li pic a random post
+  %li copy the post-id from the url (<a href="http://twitter.com/phoet/status/21556716076">http://twitter.com/phoet/status/<strong>21556716076</strong></a>)
+  %li paste it into the form
+  %li select the MongoDB driver of choice
+  %li Chunky Bacon!
+    
+%p
+  This will add the selected Twitter post to the MongoDB (hosted on MongoHQ), show you the executed Ruby source code and the bson representation of your data.
+
+-if @error
+  %p.error=@error
 
 -if @post_id && @driver
-  %p="You posted #{@post_id} and #{@driver}"
+  %p.notice="You posted #{@post_id} and #{@driver}"
 
-%form{:method=>"post", :action=>"/add"}
-  %p
-    %label{:for=>"driver"} MongoDB-Driver:
-    -MONGODB_DRIVERS.each do |driver|
-      %input{:name=>"driver", :type=>"radio", :value=>"#{driver}"}= driver
-  %p
-    %label{:for=>"post_id"} Twitter Post ID:
-    %input{:name=>"post_id"}
+  %h3 Twitter Response
+  %p.action=@twitter_post
+    
+  %h3="Ruby Source for #{@driver}"
+  =CodeRay.scan(@ruby_source, "ruby").div
   
-  %p
-    %input{:name=>"submit", :type=>"submit", :value=>"Add to MongoDB"}
+  %h3 Another Chunky Bakon?
+
+%h3.action
+  %form{:method=>"post", :action=>"/add"}
+    %p
+      %label{:for=>"post_id"} Twitter Post ID:
+      %input{:name=>"post_id"}
+    %p
+      %label{:for=>"driver"} MongoDB-Driver:
+      -MONGODB_DRIVERS.each do |driver|
+        %input{:name=>"driver", :type=>"radio", :value=>"#{driver}"}= driver
+  
+    %p
+      %input{:name=>"submit", :type=>"submit", :value=>"Chunky Bacon!"}
