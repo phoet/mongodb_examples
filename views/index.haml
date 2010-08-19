@@ -20,7 +20,7 @@
 -if @error
   %p.error=@error
 
--if @post_id && @driver
+-if @post_id && @driver && !@error
   %p.notice="You posted #{@post_id} with #{@driver} and created #{@mongo_id}"
 
   %h3 Twitter Response
