@@ -8,6 +8,7 @@ include Helper
 MONGODB_DRIVERS = [:mongo_ruby_driver, :mongoid, :mongo_mapper]
 
 get /.*/ do
+  @driver = :mongo_ruby_driver
   haml :index
 end
 
