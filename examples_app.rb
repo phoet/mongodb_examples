@@ -7,7 +7,7 @@ include Helper
 
 MONGODB_DRIVERS = [:mongo_ruby_driver, :mongoid, :mongo_mapper]
 
-MONGODB_DRIVERS.each {|driver| require "examples/#{driver}.rb"}
+MONGODB_DRIVERS.each {|driver| require "examples/#{driver}_example.rb"}
 
 get /.*/ do
   @driver = :mongo_ruby_driver
@@ -21,17 +21,17 @@ post "/add" do
   
   unless @post_id.empty?
     @twitter_post = load_post_from_twitter(@post_id)
-    @ruby_source = File.read("examples/#{@driver}.rb")
+    @ruby_source = File.read("examples/#{@driver}_example.rb")
     case @driver
     when :mongo_ruby_driver  
-      @mongo_id = MongoRubyDriver.save(@twitter_post)
-      @mongo_data = MongoRubyDriver.load(@mongo_id)
+      @mongo_id = MongoRubyDriverExample.save(@twitter_post)
+      @mongo_data = MongoRubyDriverExample.load(@mongo_id)
     when :mongoid
       @mongo_id = MongoidExample.save(@twitter_post)
       @mongo_data = MongoidExample.load(@mongo_id)
     when :mongo_mapper
-      @mongo_id = "not yet implemented"
-      @mongo_data = "not yet implemented"
+      @mongo_id = MongoMapperExample.save(@twitter_post)
+      @mongo_data = MongoMapperExample.load(@mongo_id)
     end
   else 
     @error = "Can haz driver and post_id!"
@@ -39,4 +39,3 @@ post "/add" do
   
   haml :index
 end
-

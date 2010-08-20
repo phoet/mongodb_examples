@@ -2,7 +2,7 @@
 require 'uri'
 require 'mongo'
 
-class MongoRubyDriver
+class MongoRubyDriverExample
   
   def self.save(twitter_post)
     coll = connect

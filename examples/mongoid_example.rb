@@ -5,14 +5,13 @@ class MongoidExample
   
   def self.save(twitter_post)
     connect
-    User.delete_all
+    MongoidUser.delete_all
 
-    user = User.new(twitter_post['user'])
+    user = MongoidUser.new(twitter_post['user'])
     user.save
     
-
-    tweet = Tweet.new 
-    tweet.user = user
+    tweet = MongoidTweet.new 
+    tweet.mongoid_user = user
     tweet.geo = twitter_post['geo']
     tweet.text = twitter_post['text']
     tweet.created_at = twitter_post['created_at']
@@ -22,12 +21,7 @@ class MongoidExample
   
   def self.load(mongo_id)
     connect
-    User.all.each do |tweeter| 
-      p tweeter
-      p tweeter.tweets
-    end
-    
-    User.criteria.id(mongo_id).first
+    MongoidUser.criteria.id(mongo_id).first
   end
   
   def self.connect
@@ -38,7 +32,7 @@ class MongoidExample
   end
 end
 
-class User 
+class MongoidUser
   include Mongoid::Document 
   field :description
   field :followers_count, :type => Integer
@@ -48,14 +42,14 @@ class User
   field :name
   field :created_at, :type => DateTime
   
-  embeds_many :tweets 
+  embeds_many :mongoid_tweets 
 end 
 
-class Tweet 
+class MongoidTweet
   include Mongoid::Document 
   field :geo
   field :text
   field :created_at, :type => DateTime
 
-  embedded_in :user, :inverse_of => :tweets 
+  embedded_in :mongoid_user, :inverse_of => :mongoid_tweets 
 end
