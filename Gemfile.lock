@@ -3,6 +3,7 @@ GEM
   specs:
     activesupport (2.3.8)
     backports (1.18.1)
+    blankslate (2.1.2.3)
     bson (1.0.4)
     coderay (0.9.3)
     crack (0.1.8)
@@ -46,6 +47,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  blankslate (= 2.1.2.3)
   coderay (= 0.9.3)
   crack (= 0.1.8)
   haml (= 3.0.17)
