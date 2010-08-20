@@ -58,4 +58,4 @@ DEPENDENCIES
   mongoid (= 1.9.1)
   sinatra (= 1.0)
   sinatra-reloader (= 0.5.0)
-  tzinfo
+  tzinfo (= 0.3.23)

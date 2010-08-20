@@ -25,12 +25,12 @@ post "/add" do
     when :mongo_ruby_driver  
       @mongo_id = MongoRubyDriverExample.save(@twitter_post)
       @mongo_data = MongoRubyDriverExample.load(@mongo_id)
-    # when :mongoid
-    #   @mongo_id = MongoidExample.save(@twitter_post)
-    #   @mongo_data = MongoidExample.load(@mongo_id)
-    # when :mongo_mapper
-    #   @mongo_id = MongoMapperExample.save(@twitter_post)
-    #   @mongo_data = MongoMapperExample.load(@mongo_id)
+    when :mongoid
+      @mongo_id = MongoidExample.save(@twitter_post)
+      @mongo_data = MongoidExample.load(@mongo_id)
+    when :mongo_mapper
+      @mongo_id = MongoMapperExample.save(@twitter_post)
+      @mongo_data = MongoMapperExample.load(@mongo_id)
     end
   else 
     @error = "Can haz driver and post_id!"
