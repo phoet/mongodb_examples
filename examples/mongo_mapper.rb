@@ -1,6 +1,6 @@
 
-require 'mongo_mapper' 
-
+# require 'mongo_mapper' 
+# 
 # MONGO_URL = "mongodb://#{ENV['MONGO_USER']}:#{ENV['MONGO_PASS']}@#{ENV['MONGO_HOST']}:#{ENV['MONGO_PORT']}/#{ENV['MONGO_DB']}"
 # puts "Opening connection to #{MONGO_URL}"
 # 

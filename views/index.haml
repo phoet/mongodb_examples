@@ -24,13 +24,13 @@
   %p.notice="You posted '#{@post_id}' with '#{@driver}' and created document '#{@mongo_id}'"
 
   %h3 Twitter Response
-  %pre.action=@twitter_post.ai(:plain => :true)
+  %pre.action=@twitter_post.to_yaml
     
   %h3="Ruby Source for #{@driver}"
   =CodeRay.scan(@ruby_source, "ruby").div
   
   %h3="MongoDB data for #{@mongo_id}"
-  %pre.action=@mongo_data.ai(:plain => :true).gsub(', "', ', <br>"')
+  %pre.action=@mongo_data.to_yaml
   
   %h3 Another Chunky Bakon?
 
@@ -38,13 +38,11 @@
   %form{:method=>"post", :action=>"/add"}
     %p
       %label{:for=>"post_id"} Twitter Post ID:
-      %input{:name=>"post_id"}
+      %input{:name=>"post_id", :value=>"#{@post_id}"}
     %p
       %label{:for=>"driver"} MongoDB-Driver:
       -MONGODB_DRIVERS.each do |driver|
         %input{:name=>"driver", :type=>"radio", :value=>"#{driver}", "#{driver == @driver ? 'checked' : 'title'}"=>"checked"}= driver
-    %p
-      %em Mongoid and MongoMapper coming soon!
   
     %p
       %input{:name=>"submit", :type=>"submit", :value=>"Chunky Bacon!"}

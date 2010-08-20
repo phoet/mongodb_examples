@@ -3,6 +3,7 @@ require 'uri'
 require 'mongo'
 
 class MongoRubyDriver
+  
   def self.save(twitter_post)
     coll = connect
     coll.remove

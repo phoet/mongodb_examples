@@ -1,35 +1,61 @@
 
 require 'mongoid' 
 
-# p Mongoid.database = Mongo::Connection.new(ENV['MONGO_HOST'], ENV['MONGO_PORT']).db(ENV['MONGO_DB'])
-# Mongoid.database.authenticate(ENV['MONGO_USER'], ENV['MONGO_PASS'])
-# 
-# class Tweeter 
-#   include Mongoid::Document 
-#   field :user 
-#   embeds_many :tweets 
-# end 
-# 
-# class Tweet 
-#   include Mongoid::Document 
-#   field :status 
-# 
-#   embedded_in :tweeter, :inverse_of => :tweets 
-# end 
-# 
-# Tweeter.delete_all
-# 
-# puts "just create user"
-# user = Tweeter.new(:user => 'bill') 
-# user.save 
-# 
-# puts "create tweet and user"
-# tweet = Tweet.new(:status => "This is a tweet!") 
-# tweet.tweeter = Tweeter.new(:user => 'ted') 
-# tweet.save
-# 
-# puts "all tweeter"
-# Tweeter.all.each do |tweeter| 
-#   pp tweeter
-#   pp tweeter.tweets
-# end
+class MongoidExample
+  
+  def self.save(twitter_post)
+    connect
+    User.delete_all
+
+    user = User.new(twitter_post['user'])
+    user.save
+    
+
+    tweet = Tweet.new 
+    tweet.user = user
+    tweet.geo = twitter_post['geo']
+    tweet.text = twitter_post['text']
+    tweet.created_at = twitter_post['created_at']
+    tweet.save
+    user.id
+  end
+  
+  def self.load(mongo_id)
+    connect
+    User.all.each do |tweeter| 
+      p tweeter
+      p tweeter.tweets
+    end
+    
+    User.criteria.id(mongo_id).first
+  end
+  
+  def self.connect
+    puts "opening connection to #{ENV['MONGOHQ_URL']}"
+    uri = URI.parse(ENV['MONGOHQ_URL'])
+    conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
+    Mongoid.database = conn.db(uri.path.gsub(/^\//, ''))
+  end
+end
+
+class User 
+  include Mongoid::Document 
+  field :description
+  field :followers_count, :type => Integer
+  field :protected, :type => Boolean
+  field :screen_name
+  field :url
+  field :name
+  field :created_at, :type => DateTime
+  
+  embeds_many :tweets 
+end 
+
+class Tweet 
+  include Mongoid::Document 
+  field :geo
+  field :text
+  field :created_at, :type => DateTime
+
+  embedded_in :user, :inverse_of => :tweets 
+end
