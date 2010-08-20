@@ -5,7 +5,7 @@ require 'coderay'
 include Helper
 
 # MONGODB_DRIVERS = [:mongo_ruby_driver, :mongoid, :mongo_mapper]
-MONGODB_DRIVERS = [:mongo_ruby_driver, :mongo_mapper]
+MONGODB_DRIVERS = [:mongo_ruby_driver]
 
 MONGODB_DRIVERS.each {|driver| require "examples/#{driver}_example.rb"}
 
@@ -29,9 +29,9 @@ post "/add" do
     # when :mongoid
     #   @mongo_id = MongoidExample.save(@twitter_post)
     #   @mongo_data = MongoidExample.load(@mongo_id)
-    when :mongo_mapper
-      @mongo_id = MongoMapperExample.save(@twitter_post)
-      @mongo_data = MongoMapperExample.load(@mongo_id)
+    # when :mongo_mapper
+    #   @mongo_id = MongoMapperExample.save(@twitter_post)
+    #   @mongo_data = MongoMapperExample.load(@mongo_id)
     end
   else 
     @error = "Can haz driver and post_id!"
