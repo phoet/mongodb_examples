@@ -2,8 +2,8 @@ GEM
   remote: http://rubygems.org/
   specs:
     activesupport (2.3.8)
+    awesome_print (0.2.1)
     backports (1.18.1)
-    blankslate (2.1.2.3)
     bson (1.0.4)
     coderay (0.9.3)
     crack (0.1.8)
@@ -14,10 +14,10 @@ GEM
       activesupport (>= 2.3.4)
     mongo (1.0.7)
       bson (>= 1.0.4)
-    mongo_mapper (0.8.2)
+    mongo_mapper (0.8.3)
       activesupport (>= 2.3.4)
       jnunemaker-validatable (~> 1.8.4)
-      plucky (~> 0.3.1)
+      plucky (~> 0.3.3)
     mongoid (1.9.1)
       activesupport (<= 3.0.0)
       bson (~> 1.0.1)
@@ -41,21 +41,19 @@ GEM
     sinatra-sugar (0.5.0)
       monkey-lib (~> 0.5.0)
       sinatra (~> 1.0)
-    tzinfo (0.3.23)
     will_paginate (2.3.14)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  blankslate (= 2.1.2.3)
+  awesome_print (= 0.2.1)
   coderay (= 0.9.3)
   crack (= 0.1.8)
   haml (= 3.0.17)
   httpclient (= 2.1.5.2)
   mongo (= 1.0.7)
-  mongo_mapper (= 0.8.2)
+  mongo_mapper (= 0.8.3)
   mongoid (= 1.9.1)
   sinatra (= 1.0)
   sinatra-reloader (= 0.5.0)
-  tzinfo (= 0.3.23)
