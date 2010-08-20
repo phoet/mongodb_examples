@@ -2,7 +2,6 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'helper'
 require 'coderay'
-
 include Helper
 
 # MONGODB_DRIVERS = [:mongo_ruby_driver, :mongoid, :mongo_mapper]

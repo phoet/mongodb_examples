@@ -1,6 +1,4 @@
 
-require 'mongo_mapper'
-
 # monkey patchin!
 module MongoMapper
   module Plugins
