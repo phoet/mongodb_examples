@@ -71,5 +71,5 @@ class MongoMapperUser
   many :mongo_mapper_tweets
 
   connection Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
-  set_database_name self.class.to_s
+  set_database_name URI.parse(ENV['MONGOHQ_URL']).path.gsub(/^\//, '')
 end
