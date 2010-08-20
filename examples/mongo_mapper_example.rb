@@ -25,19 +25,13 @@ class MongoMapperExample
   def self.save(twitter_post)
     MongoMapperUser.delete_all
 
-    user = MongoMapperUser.new
-    user.description = twitter_post['user']['description']
-    user.followers_count = twitter_post['user']['followers_count']
-    user.protected = twitter_post['user']['protected']
-    user.screen_name = twitter_post['user']['screen_name']
-    user.url = twitter_post['user']['url']
-    user.name = twitter_post['user']['name']
-    user.created_at = twitter_post['user']['created_at']
+    user_data = twitter_post['user']
+    user_data.delete('id')
+    user = MongoMapperUser.new(user_data)
     
-    tweet = MongoMapperTweet.new
-    tweet.geo = twitter_post['geo']
-    tweet.text = twitter_post['text']
-    tweet.created_at = twitter_post['created_at']
+    twitter_post.delete('user')
+    twitter_post.delete('id')
+    tweet = MongoMapperTweet.new(twitter_post)
     user.mongo_mapper_tweets << tweet
     user.save
     user.id
