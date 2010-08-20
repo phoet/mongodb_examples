@@ -9,6 +9,7 @@ gem "awesome_print", "0.2.1"
 gem "mongo", "1.0.7"
 gem "mongoid", "1.9.1"
 gem "mongo_mapper", "0.8.3"
+gem "tzinfo"
 
 group :development do
   gem "sinatra-reloader", "0.5.0"
