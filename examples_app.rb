@@ -5,7 +5,7 @@ require 'coderay'
 include Helper
 
 # MONGODB_DRIVERS = [:mongo_ruby_driver, :mongoid, :mongo_mapper]
-MONGODB_DRIVERS = [:mongo_ruby_driver]
+MONGODB_DRIVERS = [:mongo_ruby_driver, :mongoid]
 
 MONGODB_DRIVERS.each {|driver| require "examples/#{driver}_example.rb"}
 
