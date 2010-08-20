@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: http://gemcutter.org/
   specs:
     activesupport (2.3.8)
     awesome_print (0.2.1)
