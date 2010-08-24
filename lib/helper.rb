@@ -10,4 +10,8 @@ module Helper
     {"error" => "an error occured loading tweet #{post_id} (#{$!})"}
   end
   
+  def load_file(driver_name)
+    File.read(File.join(::File.dirname(__FILE__), "#{driver_name}_example.rb"))
+  end
+  
 end

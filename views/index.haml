@@ -41,7 +41,7 @@
       %input{:name=>"post_id", :value=>"#{@post_id}"}
     %p
       %label{:for=>"driver"} MongoDB-Driver:
-      -MONGODB_DRIVERS.each do |driver|
+      -MONGODB_DRIVERS.each do |driver, class_name|
         %input{:name=>"driver", :type=>"radio", :value=>"#{driver}", "#{driver == @driver ? 'checked' : 'title'}"=>"checked"}= driver
   
     %p
