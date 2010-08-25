@@ -13,4 +13,7 @@ gem "tzinfo", "0.3.23"
 
 group :development do
   gem "sinatra-reloader", "0.5.0"
+  gem "ZenTest", "4.3.3"
+  gem "rack-test", "0.5.4"
+  gem "rspec", "2.0.0.beta.20"
 end

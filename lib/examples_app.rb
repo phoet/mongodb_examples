@@ -16,10 +16,12 @@ end
 
 post "/add" do
   puts params.inspect
+  halt 500 if params[:driver].nil?
+  
   @driver = params[:driver].to_sym
   @post_id = params[:post_id]
   
-  unless @post_id.empty?
+  unless @post_id.nil? || @post_id.empty?
     @twitter_post = load_post_from_twitter @post_id
     @ruby_source = load_file @driver
     
