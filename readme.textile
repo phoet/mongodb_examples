@@ -6,15 +6,21 @@ Examples of "Mongo Ruby Driver":http://api.mongodb.org, "Mongoid":http://mongoid
 
 h2. Installation
 
+Install "RVM":http://rvm.beginrescueend.com/ and "homebrew":http://mxcl.github.com/homebrew/
+
 <pre>
-# use Ruby 1.9 with a gemset
-rvm use 1.9.1@mongodb
-# use bundler-1.0.0.rc.5 or higher
-gem install bundler --pre
+brew install mongo
+mongo
+> use test
+> db.addUser('test', 'test')
+> exit
+export MONGOHQ_URL="mongodb://test:test@localhost:27017/test"
+gem install bundler
 bundle install
+rackup
 </pre>
 
-"Some more information on installing MongoDB and using the different MongoDB Drivers":http://blog.nofail.de/2010/07/mongo-ruby-driver-mongoid-and-mongomapper/.
+Some more information on "installing MongoDB and using the different MongoDB Drivers":http://blog.nofail.de/2010/07/mongo-ruby-driver-mongoid-and-mongomapper/.
 
 h2. Resources
 
