@@ -21,7 +21,7 @@ class MongoidExample
   
   def self.load(mongo_id)
     connect
-    MongoidUser.criteria.id(mongo_id).first
+    MongoidUser.find(mongo_id)
   end
   
   def self.connect

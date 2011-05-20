@@ -1,19 +1,19 @@
 source 'http://gemcutter.org'
 
-gem "sinatra", "1.0"
-gem "haml", "3.0.17"
-gem "httpclient", "2.1.5.2"
-gem "crack", "0.1.8"
-gem "coderay", "0.9.3"
-gem "awesome_print", "0.2.1"
-gem "mongo", "1.0.7"
-gem "mongoid", "1.9.1"
-gem "mongo_mapper", "0.8.3"
-gem "tzinfo", "0.3.23"
+gem "sinatra", "~> 1.2.6"
+gem "haml", "~> 3.1.1"
+gem "httpclient", "~> 2.2.0.2"
+gem "crack", "~> 0.1.8"
+gem "coderay", "~> 0.9.3"
+gem "awesome_print", "~> 0.4.0"
+gem "mongo", "~> 1.3.1"
+gem "mongoid", "~> 2.0.1"
+gem "mongo_mapper", "~> 0.9.1"
+gem "tzinfo", "~> 0.3.27"
 
 group :development do
-  gem "sinatra-reloader", "0.5.0"
-  gem "ZenTest", "4.3.3"
-  gem "rack-test", "0.5.4"
-  gem "rspec", "2.0.0.beta.20"
+  gem "ZenTest", "~> 4.5.0"
+  gem "rack-test", "~> 0.6.0"
+  gem "rspec", "~> 2.6.0"
+  gem "fuubar", "~> 0.0.4"
 end
