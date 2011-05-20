@@ -28,9 +28,8 @@ h2. Resources
 ** "driver documentation":http://github.com/mongodb/mongo-ruby-driver
 ** "connection help":http://docs.heroku.com/mongohq#using-mongo-ruby-driver
 * Mongoid
-** "project site":http://github.com/durran/mongoid
-** "great documentation":http://mongoid.org/docs/documents/
+** "project site":http://mongoid.org/
 ** "simple tutorial":http://rujmah.posterous.com/using-mongoid-without-rails
 * MongoMapper
-** "project page":http://github.com/jnunemaker/mongomapper
+** "project site":http://mongomapper.com/
 ** "nice tutorial":http://railstips.org/blog/archives/2009/06/27/mongomapper-the-rad-mongo-wrapper/
