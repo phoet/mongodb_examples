@@ -1,6 +1,3 @@
-require 'httpclient'
-require 'crack/json'
-
 module Helper
 
   def load_post_from_twitter(post_id)

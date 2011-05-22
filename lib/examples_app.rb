@@ -15,7 +15,6 @@ get /.*/ do
 end
 
 post "/add" do
-  puts params.inspect
   halt 500 if params[:driver].nil?
   
   @driver = params[:driver].to_sym

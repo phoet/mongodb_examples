@@ -1,11 +1,9 @@
 $:.unshift ::File.join(::File.dirname(__FILE__), 'lib')
 
-require "rubygems"
-require "bundler"
+require 'rubygems'
+require 'bundler'
 
-Bundler.setup
-
-require 'sinatra'
+Bundler.require
 
 configure :development do
   Sinatra::Application.reset!
