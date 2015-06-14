@@ -14,6 +14,5 @@ gem "mongo_mapper", "~> 0.9.1"
 group :development do
   gem "rack-test", "~> 0.6.0"
   gem "rspec", "~> 2.6.0"
-  gem "fuubar", "~> 0.0.4"
-  gem "heroku"
+  gem "rake"
 end

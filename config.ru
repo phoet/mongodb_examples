@@ -8,6 +8,8 @@ Bundler.require
 configure :development do
   Sinatra::Application.reset!
   use Rack::Reloader
+  set :root, File.dirname(__FILE__)
+  set :views, File.dirname(__FILE__) + "/views"
 end
 
 require 'examples_app'
