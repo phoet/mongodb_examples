@@ -6,7 +6,7 @@ class MongoMapperExample
     user_data = twitter_post['user']
     user_data.delete('id')
     user = MongoMapperUser.new(user_data)
-    
+
     twitter_post.delete('user')
     twitter_post.delete('id')
     tweet = MongoMapperTweet.new(twitter_post)
@@ -21,14 +21,14 @@ class MongoMapperExample
 
 end
 
-class MongoMapperTweet 
+class MongoMapperTweet
   include MongoMapper::EmbeddedDocument
 
   key :geo, String
   key :text, String
   key :created_at, DateTime
 end
-  
+
 class MongoMapperUser
   include MongoMapper::Document
 

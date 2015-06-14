@@ -1,13 +1,13 @@
 class MongoidExample
-  
+
   def self.save(twitter_post)
     connect
     MongoidUser.delete_all
 
     user = MongoidUser.new(twitter_post['user'])
     user.save
-    
-    tweet = MongoidTweet.new 
+
+    tweet = MongoidTweet.new
     tweet.mongoid_user = user
     tweet.geo = twitter_post['geo']
     tweet.text = twitter_post['text']
@@ -15,12 +15,12 @@ class MongoidExample
     tweet.save
     user.id
   end
-  
+
   def self.load(mongo_id)
     connect
     MongoidUser.find(mongo_id)
   end
-  
+
   def self.connect
     uri = URI.parse(ENV['MONGOHQ_URL'])
     conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
@@ -29,7 +29,7 @@ class MongoidExample
 end
 
 class MongoidUser
-  include Mongoid::Document 
+  include Mongoid::Document
   field :description
   field :followers_count, :type => Integer
   field :protected, :type => Boolean
@@ -37,15 +37,15 @@ class MongoidUser
   field :url
   field :name
   field :created_at, :type => DateTime
-  
-  embeds_many :mongoid_tweets 
-end 
+
+  embeds_many :mongoid_tweets
+end
 
 class MongoidTweet
-  include Mongoid::Document 
+  include Mongoid::Document
   field :geo
   field :text
   field :created_at, :type => DateTime
 
-  embedded_in :mongoid_user, :inverse_of => :mongoid_tweets 
+  embedded_in :mongoid_user, :inverse_of => :mongoid_tweets
 end
